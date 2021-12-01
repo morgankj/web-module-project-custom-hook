@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./style.css";
 
 import Charts from "./components/Charts";
 import Navbar from "./components/Navbar";
 
-import "./style.css";
+import UseDarkMode from "./hooks/useDarkMode";
 
 const App = () => {
   const [coinData, setCoinData] = useState([]);
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = UseDarkMode(false);
 
   useEffect(() => {
     axios
